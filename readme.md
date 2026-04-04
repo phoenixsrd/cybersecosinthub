@@ -29,7 +29,7 @@ Portal educacional sobre Cybersegurança e OSINT (Open Source Intelligence).
 ├── style.css
 ├── script.js
 ├── vercel.json
-└── README.md
+└── readme.md
 ```
 ## ✨ Features
 
