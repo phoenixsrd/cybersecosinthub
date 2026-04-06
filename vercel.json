@@ -101,7 +101,7 @@
   ],
   "redirects": [
     {
-      "source": "/(.*)//+(.*)",
+      "source": "/(.*)/+(.*)",
       "destination": "/$1/$2",
       "permanent": true
     }
