@@ -4,7 +4,7 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "Content-Security-Policy",
@@ -101,7 +101,7 @@
   ],
   "redirects": [
     {
-      "source": "/",
+      "source": "/index.html",
       "destination": "/$1/$2",
       "permanent": true
     }
