@@ -41,7 +41,8 @@ html {
 
 body {
     font-family: var(--font-body);
-    background-color: var(--bg-primary);    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     line-height: 1.7;
     overflow-x: hidden;
     position: relative;
@@ -88,7 +89,9 @@ a:hover {
     height: 100%;
     z-index: -2;
     opacity: 0.06;
+    pointer-events: none;
 }
+
 .scanlines {
     position: fixed;
     top: 0;
@@ -136,7 +139,8 @@ a:hover {
 
 .typing-loader {
     font-size: 1rem;
-    letter-spacing: 3px;    display: block;
+    letter-spacing: 3px;
+    display: block;
     margin-bottom: 20px;
 }
 
@@ -184,7 +188,8 @@ a:hover {
 .nav-container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 2rem;    display: flex;
+    padding: 0 2rem;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     height: 70px;
@@ -245,6 +250,9 @@ a:hover {
     width: 30px;
     height: 20px;
     position: relative;
+    background: none;
+    border: none;
+    padding: 0;
 }
 
 .hamburger {
@@ -269,6 +277,7 @@ a:hover {
 .hamburger::before { top: -8px; }
 .hamburger::after { top: 8px; }
 
+/* ═══ SECTIONS ═══ */
 .section {
     min-height: 100vh;
     padding: 120px 2rem 80px;
@@ -280,7 +289,8 @@ a:hover {
     margin: 0 auto;
 }
 
-.section-title {    display: flex;
+.section-title {
+    display: flex;
     align-items: center;
     gap: 1rem;
     margin-bottom: 3rem;
@@ -328,6 +338,7 @@ a:hover {
     text-align: left;
     box-shadow: var(--shadow-card);
 }
+
 .terminal-header {
     display: flex;
     align-items: center;
@@ -376,7 +387,8 @@ a:hover {
     font-weight: 700;
 }
 
-.command {    color: var(--cyan);
+.command {
+    color: var(--cyan);
 }
 
 .cursor {
@@ -472,7 +484,8 @@ a:hover {
     margin-bottom: 8px;
 }
 
-.scroll-arrow {    color: var(--accent);
+.scroll-arrow {
+    color: var(--accent);
     animation: bounce 1.5s infinite;
 }
 
@@ -520,7 +533,8 @@ a:hover {
 @keyframes glitch-2 {
     0% { transform: translate(0); }
     20% { transform: translate(3px, -3px); }
-    40% { transform: translate(3px, 3px); }    60% { transform: translate(-3px, -3px); }
+    40% { transform: translate(3px, 3px); }
+    60% { transform: translate(-3px, -3px); }
     80% { transform: translate(-3px, 3px); }
     100% { transform: translate(0); }
 }
@@ -568,6 +582,7 @@ a:hover {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
+
 .about-card h3 {
     font-family: var(--font-display);
     font-size: 1.1rem;
@@ -616,6 +631,7 @@ a:hover {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 1.5rem;
 }
+
 .osint-cat .card-header {
     display: flex;
     align-items: center;
@@ -663,7 +679,8 @@ a:hover {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: 2rem;
-    justify-content: center;}
+    justify-content: center;
+}
 
 .filter-btn {
     padding: 8px 20px;
@@ -712,7 +729,8 @@ a:hover {
 .tool-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;    margin-bottom: 0.8rem;
+    align-items: center;
+    margin-bottom: 0.8rem;
 }
 
 .tool-category {
@@ -760,7 +778,8 @@ a:hover {
 }
 
 .techniques-grid {
-    display: grid;    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 1.5rem;
 }
 
@@ -808,7 +827,8 @@ a:hover {
 .security-item .security-number {
     font-family: var(--font-display);
     font-size: 2rem;
-    color: var(--accent);    opacity: 0.3;
+    color: var(--accent);
+    opacity: 0.3;
     margin-bottom: 0.5rem;
 }
 
@@ -857,6 +877,7 @@ a:hover {
     color: var(--accent);
     margin-bottom: 0.5rem;
 }
+
 .interactive-checklist {
     display: grid;
     gap: 0.5rem;
@@ -905,7 +926,8 @@ a:hover {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);    color: var(--bg-primary);
+    transform: translate(-50%, -50%);
+    color: var(--bg-primary);
     font-size: 12px;
     font-weight: bold;
 }
@@ -938,6 +960,23 @@ a:hover {
     font-family: var(--font-mono);
 }
 
+.cve-protections {
+    border-left: 3px solid var(--accent) !important;
+}
+
+.cve-item {
+    padding: 0.8rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.cve-item:hover {
+    border-color: var(--accent-dim);
+    background: rgba(0, 255, 65, 0.03);
+}
+
 .resources-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -954,6 +993,7 @@ a:hover {
 .resource-list {
     list-style: none;
 }
+
 .resource-list li {
     padding: 6px 0;
     font-size: 0.8rem;
@@ -1001,7 +1041,8 @@ a:hover {
 }
 
 .contact-grid {
-    display: grid;    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
 }
 
@@ -1049,7 +1090,8 @@ a:hover {
 }
 
 .contact-form .form-group {
-    margin-bottom: 1.2rem;}
+    margin-bottom: 1.2rem;
+}
 
 .contact-form label {
     display: block;
@@ -1081,6 +1123,16 @@ a:hover {
     box-shadow: 0 0 10px var(--accent-glow);
 }
 
+.contact-form input:invalid:not(:placeholder-shown),
+.contact-form textarea:invalid:not(:placeholder-shown) {
+    border-color: var(--red);
+}
+
+.contact-form input:valid:not(:placeholder-shown),
+.contact-form textarea:valid:not(:placeholder-shown) {
+    border-color: var(--accent-dim);
+}
+
 .contact-form select option {
     background: var(--bg-secondary);
     color: var(--text-primary);
@@ -1098,7 +1150,8 @@ a:hover {
     border-radius: 4px;
     cursor: pointer;
     transition: var(--transition);
-    position: relative;    overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-submit:hover {
@@ -1146,6 +1199,7 @@ a:hover {
     letter-spacing: 2px;
     margin-bottom: 0.5rem;
 }
+
 .footer-logo .accent {
     color: var(--accent);
     text-shadow: 0 0 10px var(--accent-glow);
@@ -1194,7 +1248,8 @@ a:hover {
 
 .back-to-top {
     position: fixed;
-    bottom: 30px;    right: 30px;
+    bottom: 30px;
+    right: 30px;
     width: 45px;
     height: 45px;
     background: var(--bg-card);
@@ -1229,6 +1284,40 @@ a:hover {
 .text-yellow { color: var(--yellow); }
 .text-dim { color: var(--text-dim); }
 
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in:nth-child(1) { transition-delay: 0.1s; }
+.fade-in:nth-child(2) { transition-delay: 0.2s; }
+.fade-in:nth-child(3) { transition-delay: 0.3s; }
+.fade-in:nth-child(4) { transition-delay: 0.4s; }
+.fade-in:nth-child(5) { transition-delay: 0.5s; }
+.fade-in:nth-child(6) { transition-delay: 0.6s; }
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;
@@ -1241,7 +1330,8 @@ a:hover {
         width: 100%;
         height: calc(100vh - 70px);
         background: rgba(10, 10, 15, 0.98);
-        backdrop-filter: blur(20px);        flex-direction: column;
+        backdrop-filter: blur(20px);
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 1rem;
@@ -1279,6 +1369,10 @@ a:hover {
     .section {
         padding: 100px 1rem 60px;
     }
+
+    .cve-protections .cve-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1290,24 +1384,7 @@ a:hover {
         font-size: 1.1rem;
     }
 
-    .card {        padding: 1.5rem;
+    .card {
+        padding: 1.5rem;
     }
 }
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.fade-in:nth-child(1) { transition-delay: 0.1s; }
-.fade-in:nth-child(2) { transition-delay: 0.2s; }
-.fade-in:nth-child(3) { transition-delay: 0.3s; }
-.fade-in:nth-child(4) { transition-delay: 0.4s; }
-.fade-in:nth-child(5) { transition-delay: 0.5s; }
-.fade-in:nth-child(6) { transition-delay: 0.6s; }
