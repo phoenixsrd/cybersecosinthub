@@ -1,9 +1,3 @@
-/* ═══════════════════════════════════════════════════════════════
-   CyberSec & OSINT Hub — Hardened Stylesheet
-   Security: No @import, no external resources except Google Fonts
-             (loaded via SRI-protected <link> in HTML)
-   ═══════════════════════════════════════════════════════════════ */
-
 :root {
     --bg-primary: #0a0a0f;
     --bg-secondary: #0d0d14;
@@ -87,7 +81,6 @@ a:hover {
     text-shadow: 0 0 10px var(--accent-glow);
 }
 
-/* ═══ MATRIX CANVAS ═══ */
 #matrixCanvas {
     position: fixed;
     top: 0;
@@ -116,7 +109,6 @@ a:hover {
     );
 }
 
-/* ═══ LOADER ═══ */
 .loader {
     position: fixed;
     top: 0;
@@ -175,7 +167,6 @@ a:hover {
     color: var(--text-secondary);
 }
 
-/* ═══ NAVBAR ═══ */
 .navbar {
     position: fixed;
     top: 0;
@@ -286,7 +277,6 @@ a:hover {
 .hamburger::before { top: -8px; }
 .hamburger::after { top: 8px; }
 
-/* ═══ SECTIONS ═══ */
 .section {
     min-height: 100vh;
     padding: 120px 2rem 80px;
@@ -324,7 +314,6 @@ a:hover {
     background: linear-gradient(90deg, var(--border-color), transparent);
 }
 
-/* ═══ HERO ═══ */
 .hero {
     display: flex;
     align-items: center;
@@ -505,7 +494,6 @@ a:hover {
     60% { transform: translateY(4px); }
 }
 
-/* ═══ GLITCH ═══ */
 .glitch {
     position: relative;
 }
@@ -550,7 +538,6 @@ a:hover {
     100% { transform: translate(0); }
 }
 
-/* ═══ CARDS ═══ */
 .card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -584,7 +571,6 @@ a:hover {
     opacity: 1;
 }
 
-/* ═══ ABOUT ═══ */
 .about-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -630,7 +616,6 @@ a:hover {
     font-weight: bold;
 }
 
-/* ═══ OSINT ═══ */
 .osint-intro {
     margin-bottom: 3rem;
 }
@@ -688,7 +673,6 @@ a:hover {
     font-family: var(--font-mono);
 }
 
-/* ═══ TOOLS ═══ */
 .tools-filter {
     display: flex;
     flex-wrap: wrap;
@@ -792,7 +776,6 @@ a:hover {
     font-family: var(--font-mono);
 }
 
-/* ═══ TECHNIQUES ═══ */
 .techniques-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -833,7 +816,6 @@ a:hover {
     word-break: break-all;
 }
 
-/* ═══ SECURITY ═══ */
 .security-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -977,7 +959,6 @@ a:hover {
     font-family: var(--font-mono);
 }
 
-/* ═══ CVE PROTECTIONS PANEL ═══ */
 .cve-protections {
     border-left: 3px solid var(--accent) !important;
 }
@@ -995,7 +976,6 @@ a:hover {
     background: rgba(0, 255, 65, 0.03);
 }
 
-/* ═══ RESOURCES ═══ */
 .resources-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1059,7 +1039,6 @@ a:hover {
     color: var(--orange);
 }
 
-/* ═══ CONTACT ═══ */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1143,7 +1122,6 @@ a:hover {
     box-shadow: 0 0 10px var(--accent-glow);
 }
 
-/* Validation states */
 .contact-form input:invalid:not(:placeholder-shown),
 .contact-form textarea:invalid:not(:placeholder-shown) {
     border-color: var(--red);
@@ -1202,7 +1180,6 @@ a:hover {
     to { transform: rotate(360deg); }
 }
 
-/* ═══ FOOTER ═══ */
 .footer {
     padding: 3rem 2rem;
     border-top: 1px solid var(--border-color);
@@ -1268,7 +1245,6 @@ a:hover {
     font-size: 0.7rem !important;
 }
 
-/* ═══ BACK TO TOP ═══ */
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -1301,14 +1277,12 @@ a:hover {
     transform: translateY(-3px);
 }
 
-/* ═══ TEXT UTILITIES ═══ */
 .text-green { color: var(--accent); }
 .text-cyan { color: var(--cyan); }
 .text-white { color: var(--text-primary); }
 .text-yellow { color: var(--yellow); }
 .text-dim { color: var(--text-dim); }
 
-/* ═══ ANIMATIONS ═══ */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -1332,7 +1306,6 @@ a:hover {
     to { transform: translateX(0); opacity: 1; }
 }
 
-/* ═══ REDUCED MOTION ═══ */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -1344,7 +1317,6 @@ a:hover {
     }
 }
 
-/* ═══ RESPONSIVE ═══ */
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;

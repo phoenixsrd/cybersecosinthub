@@ -57,7 +57,7 @@ Portal educacional sobre Cybersegurança e OSINT (Open Source Intelligence) com 
 ├── style.css       # CSS com prefers-reduced-motion, pointer-events
 ├── script.js       # JS com sanitização, CSRF, rate limiting
 ├── vercel.json     # Headers de segurança avançados
-└── README.md       # Este arquivo
+└── readme.md       # Este arquivo
 ```
 
 ## ✨ Features
