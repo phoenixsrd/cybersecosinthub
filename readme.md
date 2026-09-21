@@ -1,78 +1,61 @@
-# 🔐 CyberSec & OSINT Hub — Hardened Edition
+# 🔐 CyberSec & OSINT Hub
 
-Portal educacional sobre Cybersegurança e OSINT (Open Source Intelligence) com proteções avançadas contra CVEs.
+Portal educacional em português sobre **cibersegurança, OSINT, segurança ofensiva, defesa cibernética e privacidade digital**. O projeto reúne conceitos, ferramentas, técnicas, referências e um checklist interativo em uma única interface com estética de terminal/hacker.
 
-## 🚀 Deploy na Vercel
+> **Uso responsável:** todo conteúdo deve ser usado apenas para estudo, defesa e testes autorizados. Não utilize técnicas contra sistemas sem permissão explícita.
 
-1. Crie um repositório no GitHub com estes arquivos
-2. Acesse [vercel.com](https://vercel.com)
-3. Clique em **"New Project"** e importe o repositório
-4. Clique em **"Deploy"** — pronto!
+## Conteúdo do portal
 
-## 🛡️ Segurança Implementada
+- Fundamentos de defesa cibernética, segurança ofensiva, inteligência e criptografia.
+- Metodologia OSINT: planejamento, coleta, processamento, análise, disseminação e feedback.
+- Categorias de investigação: usernames e e-mails, domínios e IPs, redes sociais, geolocalização, dark web e documentos.
+- Arsenal filtrável de ferramentas como Nmap, Maltego, Metasploit, Burp Suite, Recon-ng, Autopsy, Subfinder, SpiderFoot, Nikto e Volatility.
+- Exemplos educacionais de Google Dorking, enumeração de subdomínios, reconhecimento de e-mails, Shodan, análise de imagens e arquivos históricos.
+- Boas práticas para autenticação, rede, privacidade, hardening e segurança web.
+- Lista de certificações, plataformas de treino, frameworks e comunidades.
+- Checklist pessoal salvo localmente no navegador.
 
-### Headers HTTP
+## Segurança e acessibilidade
 
-| Header | Proteção | CVE Mitigado |
-|--------|----------|--------------|
-| **CSP (Nonce-based)** | Restringe scripts a nonces aleatórios — elimina `unsafe-inline` | CVE-2019-11730, CVE-2020-15654, CVE-2021-42762 |
-| **CSP Report-Only** | Monitora violações CSP em tempo real | — |
-| **HSTS (2 anos)** | Força HTTPS com preload | CVE-2011-3389 (BEAST/SSL Strip) |
-| **X-Frame-Options: DENY** | Previne clickjacking | CVE-2020-5159 |
-| **X-Content-Type-Options** | Previne MIME sniffing | CVE-2019-11730 |
-| **Referrer-Policy** | Controle de informações de referrer | CVE-2020-8277 |
-| **Permissions-Policy** | Bloqueia câmera, microfone, geolocalização, USB, BT, FLoC | CVE-2019-11477 |
-| **COOP/CORP/COEP** | Isolamento cross-origin completo (Spectre/Meltdown) | CVE-2017-5754 |
-| **X-DNS-Prefetch-Control** | Previne DNS rebinding | CVE-2020-8277 |
-| **X-Permitted-Cross-Domain-Policies** | Bloqueia Flash/PDF cross-domain | CVE-2019-8075 |
-| **Cache-Control: no-store** | Previne cache de dados sensíveis | CVE-2019-5418 |
+O projeto foi construído como um site estático com foco em hardening no cliente:
 
-### Proteções JavaScript
+- CSP, `X-Content-Type-Options`, `X-Frame-Options`, Referrer Policy e Permissions Policy.
+- `vercel.json` com headers de segurança para deploy na Vercel.
+- Inserção de texto com `textContent`, validação de campos e limites de tamanho.
+- Token CSRF gerado no navegador, honeypot e limitação de submissões do formulário.
+- Validação de chaves do `localStorage`.
+- Controle de animações, limpeza de observers/intervalos e respeito a `prefers-reduced-motion`.
+- Navegação com ARIA, suporte a teclado e layout responsivo.
 
-| Proteção | Descrição |
-|----------|-----------|
-| **Input Sanitization** | `textContent`-based (nunca `innerHTML` com dados do usuário) |
-| **CSRF Token** | Token criptograficamente aleatório gerado via `crypto.getRandomValues` |
-| **Honeypot** | Campo oculto para detecção de bots |
-| **Rate Limiting** | 5s cooldown entre submissões de formulário |
-| **Validation** | Regex patterns + length limits em todos os campos |
-| **Storage Key Validation** | Previne injection via localStorage keys |
-| **Safe DOM Insertion** | Terminal output via DOM API (não innerHTML) |
-| **Performance** | `requestAnimationFrame` throttling + visibility-based pause |
-| **`setInterval` cleanup** | Prevenção de memory leak DoS |
-| **`prefers-reduced-motion`** | Respeita preferência de acessibilidade |
+Essas medidas reduzem riscos comuns em uma página estática, mas não substituem uma revisão de segurança, um backend real ou uma política de proteção de dados. O formulário atual simula o envio localmente; ele não entrega mensagens a um servidor.
 
-### Removido
+## Arquivos
 
-| Item | Razão |
-|------|-------|
-| **`X-XSS-Protection`** | Deprecated — pode introduzir vulnerabilidades em navegadores antigos |
-| **Console Easter Egg** | Vetor de self-XSS |
-| **`unsafe-inline` em script-src** | Derrota o propósito do CSP |
-
-## 📁 Estrutura do Projeto
-
-```
-├── index.html      # HTML hardend com ARIA, CSP nonce, validação
-├── style.css       # CSS com prefers-reduced-motion, pointer-events
-├── script.js       # JS com sanitização, CSRF, rate limiting
-├── vercel.json     # Headers de segurança avançados
-└── readme.md       # Este arquivo
+```text
+index.html   # Estrutura, conteúdo, navegação e seções educacionais
+style.css    # Tema visual, layout responsivo e animações
+script.js    # Interações, filtros, checklist, terminal e validações
+vercel.json  # Headers e configurações para hospedagem na Vercel
 ```
 
-## ✨ Features
+## Executar localmente
 
-- 🟢 **Matrix Rain** animado com cleanup automático
-- ⌨️ **Terminal interativo** com inserção DOM segura
-- 🔧 **Filtro de ferramentas** por categoria com ARIA
-- ✅ **Checklist de segurança** com persistência local validada
-- 📱 **Design responsivo** com `prefers-reduced-motion`
-- 🎨 **Tema hacker** com glitch effects e scanlines
-- 🛡️ **Painel CVE** mostrando todas as mitigações ativas
-- ♿ **Acessibilidade** ARIA roles, labels, keyboard navigation
+Não há build nem dependências de backend. Para visualizar:
 
-## ⚠️ Disclaimer
+```bash
+git clone https://github.com/phoenixsrd/cybersecosinthub.git
+cd cybersecosinthub
+python3 -m http.server 8080
+```
 
-Este site é **apenas educacional**. Todo conhecimento deve ser utilizado de forma **ética e legal**, apenas em sistemas onde você tem **autorização explícita**.
+Abra `http://localhost:8080`.
 
-**Built with ❤️ and 🛡️ for the cybersecurity community**
+## Deploy na Vercel
+
+1. Importe o repositório em [vercel.com](https://vercel.com).
+2. Selecione o projeto como site estático, sem comando de build.
+3. Publique e verifique se os headers de `vercel.json` estão ativos.
+
+## Licença e responsabilidade
+
+Consulte o arquivo `license`. O projeto é educacional e não oferece autorização para realizar reconhecimento, exploração ou coleta de dados contra terceiros.
