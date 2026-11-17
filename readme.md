@@ -19,8 +19,8 @@ Portal educacional em português sobre **cibersegurança, OSINT, segurança ofen
 
 O projeto foi construído como um site estático com foco em hardening no cliente:
 
-- CSP, `X-Content-Type-Options`, `X-Frame-Options`, Referrer Policy e Permissions Policy.
-- `vercel.json` com headers de segurança para deploy na Vercel.
+- CSP, `X-Content-Type-Options`, `X-Frame-Options`, Referrer Policy, Permissions Policy, HSTS e cabeçalhos Cross-Origin (COOP, CORP e COEP).
+- `vercel.json` com esses headers para deploy na Vercel, além de cache de um ano para `style.css` e `script.js`.
 - Inserção de texto com `textContent`, validação de campos e limites de tamanho.
 - Token CSRF gerado no navegador, honeypot e limitação de submissões do formulário.
 - Validação de chaves do `localStorage`.
@@ -28,6 +28,12 @@ O projeto foi construído como um site estático com foco em hardening no client
 - Navegação com ARIA, suporte a teclado e layout responsivo.
 
 Essas medidas reduzem riscos comuns em uma página estática, mas não substituem uma revisão de segurança, um backend real ou uma política de proteção de dados. O formulário atual simula o envio localmente; ele não entrega mensagens a um servidor.
+
+### Pontos de atenção no `vercel.json`
+
+- O cabeçalho `Content-Security-Policy-Report-Only` envia relatórios para `/api/csp-report`, endpoint que não existe neste repositório.
+- A CSP usa `'nonce-${NONCE}'`, mas a Vercel não substitui esse placeholder em sites estáticos. Na prática, só scripts do próprio domínio (`'self'`) são permitidos; scripts inline seriam bloqueados.
+- Após o deploy, abra o console do navegador e confira se há violações de CSP ou recursos bloqueados.
 
 ## Arquivos
 
@@ -48,7 +54,7 @@ cd cybersecosinthub
 python3 -m http.server 8080
 ```
 
-Abra `http://localhost:8080`.
+Abra `http://localhost:8080`. Os headers de `vercel.json` só valem no deploy, não no servidor local.
 
 ## Deploy na Vercel
 
